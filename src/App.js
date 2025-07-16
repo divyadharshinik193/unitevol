@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,7 +18,6 @@ import VolunteerAbout from './pages/VolunteerAbout';
 import NGOAbout from './pages/NGOAbout';
 import ProjectLeadAbout from './pages/ProjectLeadAbout';
 import SheLeadsAbout from './pages/SheLeadsAbout';
-import Volunteer from './pages/VolunteerDashboard';
 import NGOProfile from './pages/NGOProfile';
 import NGODashboard from './pages/NGODashboard';
 import NGOProjects from './pages/NGOProjects';
@@ -39,7 +38,6 @@ import SheLeadsVolunteers from './pages/SheLeadsVolunteers';
 // Wrapper component to handle layout
 const AppLayout = ({ children }) => {
   const location = useLocation();
-  const { user } = useAuth();
   const isPublicRoute = ['/', '/about', '/login', '/signup', '/unauthorized', '/volunteer', '/ngo', '/project-lead', '/she-leads'].includes(location.pathname);
 
   return (
