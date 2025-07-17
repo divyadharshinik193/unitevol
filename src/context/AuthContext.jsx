@@ -38,6 +38,12 @@ export const AuthProvider = ({ children }) => {
       const { user: currentUser, error: userError } = await authHelpers.getCurrentUser();
       
       if (userError) {
+        // Handle 'Auth session missing!' as a normal state, not an error
+        if (userError.message === 'Auth session missing!') {
+          setUser(null);
+          setError(null);
+          return;
+        }
         throw userError;
       }
 
