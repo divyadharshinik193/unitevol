@@ -96,9 +96,9 @@ export const AuthProvider = ({ children }) => {
           device_info: {
             platform: navigator.platform,
             language: navigator.language,
-            screen: {
-              width: screen.width,
-              height: screen.height
+            screenInfo: {
+              width: window.screen.width,
+              height: window.screen.height
             }
           }
         });
